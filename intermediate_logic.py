@@ -45,7 +45,7 @@ def load_money():
 
             # Safety check: Ensure data is actually a dictionary
             if isinstance(data, dict):
-                return data.get("balance", STARTING_MONEY)  # Note: lowercase 'balance'
+                return data.get("balance", STARTING_MONEY)
             else:
                 return STARTING_MONEY
 
@@ -56,7 +56,6 @@ def load_money():
 
 def save_money(amount):
     with open(MONEY_FILE, "w") as f:
-        # Note: lowercase 'balance' to match the loader
         json.dump({"balance": amount}, f)
 
 
